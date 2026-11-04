@@ -1,0 +1,108 @@
+﻿/* ================= ACHIEVEMENTS ================= */
+.achievements-section {
+    padding: 130px 0;
+    background: var(--light);
+}
+
+    .achievements-section .section-title .highlight {
+        background: var(--gradient-warm);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+.achievement-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 45px 35px;
+    text-align: center;
+    transition: .4s var(--ease);
+    box-shadow: var(--shadow-sm);
+    height: 100%;
+    border: 1px solid rgba(10,14,39,.04);
+    position: relative;
+    overflow: hidden;
+    color: inherit;
+}
+
+    .achievement-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--gradient-main);
+        opacity: 0;
+        transition: .4s var(--ease);
+        z-index: 0;
+    }
+
+    .achievement-card:hover {
+        transform: translateY(-12px);
+        box-shadow: var(--shadow-glow);
+        color: inherit;
+    }
+
+        .achievement-card:hover::before {
+            opacity: 1;
+        }
+
+    .achievement-card > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    .achievement-card:hover h4,
+    .achievement-card:hover p {
+        color: white;
+    }
+
+.achievement-icon {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    font-size: 32px;
+    box-shadow: 0 15px 35px rgba(37,71,244,.3);
+    transition: .4s var(--ease);
+}
+
+.achievement-card:hover .achievement-icon {
+    background: rgba(255,255,255,.2);
+    box-shadow: none;
+    transform: scale(1.08) rotate(-6deg);
+}
+
+.achievement-card h4 {
+    font-weight: 800;
+    margin-bottom: 14px;
+    font-size: 20px;
+    transition: .3s;
+}
+
+.achievement-card p {
+    color: var(--gray);
+    line-height: 1.9;
+    flex-grow: 1;
+    transition: .3s;
+}
+
+.achievement-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.achievement-card:hover .achievement-link {
+    color: white;
+}

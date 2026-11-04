@@ -1,0 +1,214 @@
+﻿.school-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    transition: .4s var(--ease);
+    padding: 18px 0 0;
+}
+
+    .school-header .navbar {
+        padding: 14px 26px;
+        border-radius: 100px;
+        transition: .4s var(--ease);
+        background: rgba(255,255,255,.5);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255,255,255,.6);
+    }
+
+    .school-header.scrolled {
+        box-shadow: 0 15px 45px rgba(10,14,39,.12);
+    }
+
+        .school-header.scrolled .navbar {
+            background: rgba(255,255,255,.85);
+            box-shadow: 0 10px 40px rgba(10,14,39,.08);
+        }
+
+.school-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.school-logo-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-box {
+    width: 58px;
+    height: 58px;
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(37,71,244,.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,.08), 0 0 0 4px rgba(37,71,244,.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+    .logo-box::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.5) 50%, transparent 70%);
+        transform: translateX(-100%);
+        animation: shine 4s ease-in-out infinite;
+    }
+
+@keyframes shine {
+    0%, 60% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+    .logo-text span {
+        font-size: 19px;
+        font-weight: 900;
+        color: var(--dark);
+    }
+
+    .logo-text small {
+        font-size: 11px;
+        color: var(--gray);
+        font-weight: 500;
+    }
+
+.nav-link {
+    font-weight: 600;
+    color: #334155 !important;
+    margin: 0 6px;
+    padding: 8px 14px !important;
+    border-radius: 50px;
+    position: relative;
+    transition: .3s;
+}
+
+    .nav-link:hover {
+        color: var(--primary) !important;
+        background: rgba(37,71,244,.08);
+    }
+
+    .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        right: 14px;
+        left: 14px;
+        height: 2px;
+        background: var(--gradient-main);
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: .35s var(--ease);
+    }
+
+    .nav-link:hover::after {
+        transform: scaleX(1);
+    }
+
+.school-login-btn {
+    background: var(--gradient-main);
+    color: white !important;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 10px 25px rgba(37,71,244,.3);
+    transition: .35s var(--ease);
+}
+
+    .school-login-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 35px rgba(37,71,244,.4);
+        color: white !important;
+    }
+
+.school-nimkat-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--primary);
+    border: 1.5px solid var(--primary);
+    border-radius: 50px;
+    padding: 11px 24px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .3s var(--ease);
+    margin-left: 12px;
+}
+
+    .school-nimkat-btn:hover {
+        background: var(--primary);
+        color: white;
+    }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.school-nimkat-mobile {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    margin-right: auto;
+    margin-left: 12px;
+    border-radius: 50px;
+    background: var(--gradient-main);
+    color: #fff !important;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(37,71,244,.25);
+    transition: .3s var(--ease);
+}
+
+    .school-nimkat-mobile:hover {
+        color: #fff !important;
+        transform: translateY(-2px);
+    }
+@media (max-width:991.98px) {
+
+    .school-nimkat-mobile {
+        display: flex;
+    }
+
+    .header-actions .school-nimkat-btn {
+        display: none;
+    }
+}
+@media (max-width:575.98px) {
+
+    .school-nimkat-mobile span {
+        display: none;
+    }
+
+    .school-nimkat-mobile {
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border-radius: 50%;
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "پنل مدیریت";
+}
+
+<section class="admin-hero">
+    <div class="admin-hero-bg"></div>
+    <div class="container">
+        <div class="admin-hero-content">
+            <span class="admin-badge">Admin Panel</span>
+            <h1>پنل مدیریت مدرسه خاتم</h1>
+            <p>مدیریت کامل اطلاعات مدرسه از یک مکان</p>
+        </div>
+    </div>
+</section>
+
+<section class="admin-dashboard">
+    <div class="container">
+
+        <div class="admin-section-title" data-aos="fade-up">
+            <span>مدیریت کادر</span>
+            <h2>افزودن اطلاعات</h2>
+        </div>
+
+        <div class="admin-cards-grid" data-aos="fade-up" data-aos-delay="100">
+            <a href="/Admin/AddTeacher" class="admin-card add-card">
+                <div class="admin-card-icon">👨‍🏫</div>
+                <div class="admin-card-body">
+                    <h3>افزودن معلم</h3>
+                    <p>اضافه کردن معلم کلاس، زبان یا مشاور</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/AddExecutiveStaff" class="admin-card add-card">
+                <div class="admin-card-icon">👔</div>
+                <div class="admin-card-body">
+                    <h3>افزودن کادر اجرایی</h3>
+                    <p>اضافه کردن مدیر یا معاونین مدرسه</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/AddNews" class="admin-card add-card">
+                <div class="admin-card-icon">📚</div>
+                <div class="admin-card-body">
+                    <h3>افزودن اخبار مدرسه</h3>
+                    <p>اضافه کردن اخبار و رویداد های مدرسه</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/AddAchievementItem" class="admin-card add-card">
+                <div class="admin-card-icon">🏆</div>
+                <div class="admin-card-body">
+                    <h3>افزودن دستاورد</h3>
+                    <p>اضافه کردن دستاورد و افتخارات</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/AddAchievementCategory" class="admin-card add-card">
+                <div class="admin-card-icon">🥇</div>
+                <div class="admin-card-body">
+                    <h3>افزودن دسته بندی دستاورد ها</h3>
+                    <p>اضافه کردن دسته بندی دستاورد و افتخارات</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+        </div>
+
+        <div class="admin-section-title" data-aos="fade-up" style="margin-top: 60px">
+            <span>مشاهده و مدیریت</span>
+            <h2>لیست‌ها</h2>
+        </div>
+
+        <div class="admin-cards-grid" data-aos="fade-up" data-aos-delay="100">
+            <a href="/Admin/TeachersList" class="admin-card list-card">
+                <div class="admin-card-icon">📋</div>
+                <div class="admin-card-body">
+                    <h3>لیست معلمان</h3>
+                    <p>مشاهده، ویرایش و حذف معلمان</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/ExecutiveStaffList" class="admin-card list-card">
+                <div class="admin-card-icon">📋</div>
+                <div class="admin-card-body">
+                    <h3>لیست کادر اجرایی</h3>
+                    <p>مشاهده، ویرایش و حذف کادر اجرایی</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/AchievementItemList" class="admin-card list-card">
+                <div class="admin-card-icon">📋</div>
+                <div class="admin-card-body">
+                    <h3>لیست دستاورد و افتخارات</h3>
+                    <p>مشاهده، ویرایش و حذف دستاورد و افتخارات</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/AchievementCategoryList" class="admin-card list-card">
+                <div class="admin-card-icon">📋</div>
+                <div class="admin-card-body">
+                    <h3>لیست دسته‌بندی دستاوردها</h3>
+                    <p>مشاهده، ویرایش و حذف دسته بندی دستاورد و افتخارات</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/NewsList" class="admin-card list-card">
+                <div class="admin-card-icon">📋</div>
+                <div class="admin-card-body">
+                    <h3>لیست اخبار</h3>
+                    <p>مشاهده، ویرایش و حذف اخبار مدرسه</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+
+            <a href="/Admin/CounselingTicketList" class="admin-card list-card">
+                <div class="admin-card-icon">🎫</div>
+                <div class="admin-card-body">
+                    <h3>لیست تیکت‌ها</h3>
+                    <p>مشاهده و پاسخ به تیکت‌های مشاوره</p>
+                </div>
+                <div class="admin-card-arrow">←</div>
+            </a>
+        </div>
+
+    </div>
+</section>

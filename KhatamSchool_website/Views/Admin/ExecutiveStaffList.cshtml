@@ -1,0 +1,143 @@
+﻿@using KhatamSchool_Application.ViewModels
+@model IEnumerable<ExecutiveStaffListViewModel>
+@{
+    ViewData["Title"] = "لیست کادر اجرایی";
+}
+
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/Admin/List.css" />
+}
+
+<section class="admin-list-page">
+    <div class="admin-list-bg"></div>
+    <div class="container">
+
+        <div class="admin-list-header" data-aos="fade-down">
+            <div class="alh-right">
+                <a href="/Admin/Dashboard" class="admin-back-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    بازگشت
+                </a>
+                <div>
+                    <span class="admin-badge">کادر اجرایی</span>
+                    <h1>لیست کادر اجرایی</h1>
+                    <p>@Model.Count() نفر ثبت شده</p>
+                </div>
+            </div>
+            <a href="/Admin/AddExecutiveStaff" class="al-add-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12h14" />
+                </svg>
+                افزودن کادر اجرایی
+            </a>
+        </div>
+
+        <div class="al-filters" data-aos="fade-up">
+            <div class="al-search">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+                <input type="text" id="searchInput" placeholder="جستجو بر اساس نام یا کد پرسنلی..." />
+            </div>
+            <div class="al-filter-btns">
+                <button class="al-filter-btn active" data-filter="all">همه</button>
+                <button class="al-filter-btn" data-filter="1">مدیر</button>
+                <button class="al-filter-btn" data-filter="2">معاون آموزشی</button>
+                <button class="al-filter-btn" data-filter="3">معاون اجرایی</button>
+                <button class="al-filter-btn" data-filter="4">معاون پرورشی</button>
+                <button class="al-filter-btn" data-filter="5">مسئول دفتر</button>
+            </div>
+        </div>
+
+        <div class="al-table-wrapper" data-aos="fade-up" data-aos-delay="100">
+            <table class="al-table" id="executiveTable">
+                <thead>
+                    <tr>
+                        <th>کادر اجرایی</th>
+                        <th>کد پرسنلی</th>
+                        <th>سمت</th>
+                        <th>حوزه تخصصی</th>
+                        <th>تجربه</th>
+                        <th>وضعیت</th>
+                        <th>عملیات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var staff in Model)
+                    {
+                        <tr class="al-row" data-role="@((int)staff.RoleEnum)" data-name="@staff.FullName" data-code="@staff.PersonnelCode">
+                            <td>
+                                <div class="al-person">
+                                    <div class="al-avatar">
+                                        @if (!string.IsNullOrEmpty(staff.ProfileImagePath))
+                                        {
+                                            <img src="@staff.ProfileImagePath" alt="@staff.FullName" />
+                                        }
+                                        else
+                                        {
+                                            <span>@staff.FullName.First()</span>
+                                        }
+                                    </div>
+                                    <div class="al-person-info">
+                                        <strong>@staff.FullName</strong>
+                                        <span>@(!string.IsNullOrEmpty(staff.CustomRoleTitle) ? staff.CustomRoleTitle : staff.Role)</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="al-code">@staff.PersonnelCode</span></td>
+                            <td>
+                                <span class="al-role-badge al-exec-@((int)staff.RoleEnum)">
+                                    @staff.Role
+                                </span>
+                            </td>
+                            <td class="al-muted">@(staff.ExpertiseField ?? "—")</td>
+                            <td class="al-muted">@(staff.YearsOfExperience.HasValue ? $"{staff.YearsOfExperience} سال" : "—")</td>
+                            <td>
+                                <span class="al-status @(staff.IsActive ? "active" : "inactive")">
+                                    @(staff.IsActive ? "فعال" : "غیرفعال")
+                                </span>
+                            </td>
+                            <td>
+                                <div class="al-actions">
+                                    <a href="/Admin/EditExecutiveStaff/@staff.Id" class="al-action-btn edit" title="ویرایش">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                        </svg>
+                                    </a>
+                                    <button class="al-action-btn delete" title="حذف"
+                                            data-id="@staff.Id" data-name="@staff.FullName">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polyline points="3 6 5 6 21 6" />
+                                            <path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" />
+                                            <path d="M10 11v6M14 11v6" />
+                                            <path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            @if (!Model.Any())
+            {
+                <div class="al-empty">
+                    <span>📋</span>
+                    <p>هیچ کادر اجرایی ثبت نشده</p>
+                    <a href="/Admin/AddExecutiveStaff" class="al-add-btn">افزودن اولین نفر</a>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/Admin/executiveStaffList.js"></script>
+}

@@ -1,0 +1,710 @@
+﻿/* ═══════════════════════════════
+   HERO
+═══════════════════════════════ */
+.lang-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: #020b18;
+}
+
+.lang-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,180,255,0.15) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 80% 80%, rgba(0,230,200,0.08) 0%, transparent 60%);
+}
+
+#langParticles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.lang-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.lang-badge {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgba(0,180,255,0.15), rgba(0,230,200,0.05));
+    border: 1px solid rgba(0,180,255,0.35);
+    color: #00b4ff;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+}
+
+.lang-hero h1 {
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 0%, #00b4ff 40%, #00e6c8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+.lang-hero p {
+    color: rgba(255,255,255,0.5);
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 48px;
+}
+
+.lang-hero-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 32px;
+    padding: 24px 48px;
+    background: rgba(0,180,255,0.05);
+    border: 1px solid rgba(0,180,255,0.15);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+}
+
+.lang-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+    .lang-stat strong {
+        font-size: 28px;
+        font-weight: 900;
+        color: #00b4ff;
+    }
+
+    .lang-stat span {
+        font-size: 12px;
+        color: rgba(255,255,255,0.4);
+    }
+
+.lang-stat-divider {
+    width: 1px;
+    height: 48px;
+    background: rgba(0,180,255,0.2);
+}
+
+.lang-scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(0,180,255,0.8), transparent);
+    margin: 0 auto;
+    animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+
+    50% {
+        opacity: 0.3;
+        transform: scaleY(0.5);
+    }
+}
+
+/* ═══════════════════════════════
+   SERVICES
+═══════════════════════════════ */
+.lang-services {
+    background: #020b18;
+    padding: 100px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background: rgba(0,180,255,0.08);
+    border: 1px solid rgba(0,180,255,0.2);
+    color: #00b4ff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.lang-services .section-header h2,
+.lang-teachers .section-header h2 {
+    font-size: 48px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.service-card {
+    background: linear-gradient(160deg, #071525, #040f1e);
+    border: 1px solid rgba(0,180,255,0.1);
+    border-radius: 28px;
+    padding: 36px 28px;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    cursor: default;
+}
+
+    .service-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(0,180,255,0.4);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,180,255,0.08);
+    }
+
+.service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.service-level {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+    .service-level span {
+        font-size: 12px;
+        color: #00b4ff;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+.level-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(0,180,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.level-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00b4ff, #00e6c8);
+    border-radius: 2px;
+    transition: width 1s ease;
+}
+
+/* ═══════════════════════════════
+   TEACHERS
+═══════════════════════════════ */
+.lang-teachers {
+    background: #020b18;
+    padding: 0 0 120px;
+}
+
+.lang-teacher-card {
+    position: relative;
+    background: linear-gradient(160deg, #071525, #040f1e);
+    border: 1px solid rgba(0,180,255,0.1);
+    border-radius: 28px;
+    padding: 32px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+    .lang-teacher-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(0,180,255,0.4);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,180,255,0.08);
+    }
+
+.lang-card-glow {
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0,180,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.lang-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.lang-teacher-img {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+    .lang-teacher-img img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid rgba(0,180,255,0.3);
+        position: relative;
+        z-index: 2;
+    }
+
+.lang-img-ring {
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    background: linear-gradient(135deg, #00b4ff, transparent, #00e6c8) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    animation: ringRotate 5s linear infinite;
+}
+
+@keyframes ringRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.lang-teacher-flag {
+    font-size: 32px;
+}
+
+.lang-card-body h4 {
+    font-size: 18px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.lang-card-body span {
+    display: block;
+    font-size: 13px;
+    color: #00b4ff;
+    margin-bottom: 20px;
+}
+
+.lang-profile-btn {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(0,180,255,0.3);
+    border-radius: 14px;
+    background: rgba(0,180,255,0.06);
+    color: #00b4ff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+    .lang-profile-btn:hover {
+        background: rgba(0,180,255,0.15);
+        border-color: rgba(0,180,255,0.6);
+    }
+
+/* ═══════════════════════════════
+   MODAL
+═══════════════════════════════ */
+.lang-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .4s, visibility .4s;
+    z-index: 99999;
+}
+
+    .lang-modal.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.lang-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(2,11,24,0.9);
+}
+
+.lang-modal-content {
+    position: relative;
+    z-index: 5;
+    width: 820px;
+    max-width: 92%;
+    background: linear-gradient(160deg, #071525, #040f1e);
+    border: 1px solid rgba(0,180,255,0.25);
+    border-radius: 36px;
+    padding: 50px;
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .lang-modal-content::before {
+        content: '';
+        position: absolute;
+        top: -80px;
+        left: -80px;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, rgba(0,180,255,0.1) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+.lang-close-modal {
+    position: absolute;
+    left: 24px;
+    top: 20px;
+    background: rgba(0,180,255,0.06);
+    border: 1px solid rgba(0,180,255,0.2);
+    color: rgba(255,255,255,0.6);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    line-height: 1;
+}
+
+    .lang-close-modal:hover {
+        background: rgba(0,180,255,0.15);
+        border-color: rgba(0,180,255,0.5);
+        color: #00b4ff;
+    }
+
+.lmodal-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.lmodal-img-wrapper {
+    position: relative;
+    width: 160px;
+    height: 160px;
+}
+
+    .lmodal-img-wrapper img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid rgba(0,180,255,0.4);
+        position: relative;
+        z-index: 2;
+    }
+
+.lmodal-img-ring {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, #00b4ff, transparent, #00e6c8) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    animation: ringRotate 4s linear infinite;
+}
+
+.lmodal-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background: rgba(0,180,255,0.1);
+    border: 1px solid rgba(0,180,255,0.3);
+    color: #00b4ff;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.lmodal-right h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.lmodal-right p {
+    color: rgba(255,255,255,0.5);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 32px;
+}
+
+.lmodal-stats {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 24px;
+    background: rgba(0,180,255,0.05);
+    border: 1px solid rgba(0,180,255,0.15);
+    border-radius: 16px;
+}
+
+.lmodal-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+    .lmodal-stat strong {
+        font-size: 24px;
+        font-weight: 900;
+        color: #00b4ff;
+    }
+
+    .lmodal-stat span {
+        font-size: 12px;
+        color: rgba(255,255,255,0.4);
+    }
+
+.lmodal-stat-divider {
+    width: 1px;
+    height: 44px;
+    background: rgba(0,180,255,0.2);
+}
+/* Supervisor */
+
+.supervisor-card {
+    transform: scale(1.08);
+    border: 2px solid rgba(0,180,255,.25);
+}
+
+    .supervisor-card:hover {
+        transform: translateY(-8px) scale(1.08);
+    }
+
+    .supervisor-card .lang-teacher-img,
+    .supervisor-card .lang-teacher-img img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .supervisor-card .lang-card-body h4 {
+        font-size: 22px;
+        font-weight: 900;
+    }
+
+    .supervisor-card .lang-card-body span {
+        font-size: 15px;
+        font-weight: 700;
+    }
+
+    .supervisor-card .lang-profile-btn {
+        font-size: 15px;
+        padding: 14px;
+    }
+
+    .supervisor-card .lang-teacher-flag {
+        font-size: 40px;
+    }
+
+/* ===================================================
+   MOBILE
+=================================================== */
+
+@media (max-width: 768px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* جلوگیری از ایجاد عرض اضافی */
+
+    .container,
+    .container-fluid,
+    .row,
+    .lang-hero,
+    .lang-services,
+    .lang-teachers {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* HERO */
+
+    .lang-hero {
+        min-height: 90vh;
+        padding: 90px 0 60px;
+    }
+
+        .lang-hero h1 {
+            font-size: 42px;
+            line-height: 1.3;
+        }
+
+        .lang-hero p {
+            font-size: 16px;
+            padding: 0 15px;
+        }
+
+    .lang-badge {
+        font-size: 12px;
+        padding: 8px 18px;
+        letter-spacing: 1px;
+    }
+
+    /* آمار */
+
+    .lang-hero-stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+        width: 100%;
+        max-width: 320px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .lang-stat-divider {
+        width: 70%;
+        height: 1px;
+    }
+
+    /* SERVICES */
+
+    .lang-services {
+        padding: 70px 0;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .service-card {
+        padding: 28px 22px;
+    }
+
+    /* HEADER TITLES */
+
+    .lang-services .section-header h2,
+    .lang-teachers .section-header h2 {
+        font-size: 34px;
+    }
+
+    /* TEACHERS */
+
+    .lang-teachers {
+        padding-bottom: 80px;
+    }
+
+    .supervisor-card {
+        transform: none;
+    }
+
+        .supervisor-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .supervisor-card .lang-teacher-img,
+        .supervisor-card .lang-teacher-img img {
+            width: 90px;
+            height: 90px;
+        }
+
+    /* MODAL */
+
+    .lang-modal {
+        padding: 15px;
+    }
+
+    .lang-modal-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        border-radius: 24px;
+    }
+
+    .lmodal-left {
+        width: 100%;
+    }
+
+    .lmodal-right {
+        text-align: center;
+    }
+
+        .lmodal-right h2 {
+            font-size: 24px;
+        }
+
+        .lmodal-right p {
+            font-size: 14px;
+        }
+
+    .lmodal-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .lmodal-stat-divider {
+        width: 70%;
+        height: 1px;
+    }
+
+    .lmodal-img-wrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+        .lmodal-img-wrapper img {
+            width: 130px;
+            height: 130px;
+        }
+
+    .lang-close-modal {
+        left: 15px;
+        top: 15px;
+    }
+}

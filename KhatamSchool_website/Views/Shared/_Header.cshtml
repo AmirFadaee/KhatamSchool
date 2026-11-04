@@ -1,0 +1,126 @@
+﻿<header class="school-header" id="mainHeader">
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <!-- Logo -->
+
+            <a class="navbar-brand school-logo"
+               asp-controller="Home"
+               asp-action="Home">
+
+                <div class="logo-box">
+                    <img src="~/Images/Logo/ChatGPT Image ۲۷ تیر ۱۴۰۵، ۰۱_۱۲_۰۷.webp"
+                         asp-append-version="true"
+                         alt="مدرسه خاتم"
+                         class="school-logo-img" />
+                </div>
+
+                <div class="logo-text">
+                    <span>
+                        مدرسه خاتم
+                    </span>
+
+                    <small>
+                        پیش دبستان و دبستان غیردولتی پسرانه خاتم
+                    </small>
+                </div>
+
+            </a>
+
+            <!-- Mobile Nimkat Button -->
+            <a class="btn school-nimkat-mobile"
+               href="https://nimkatsoft.ir/auth/login"
+               title="ورود به سامانه نیمکت">
+
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>نیمکت</span>
+
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#schoolMenu">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <!-- Menu -->
+            <div class="collapse navbar-collapse"
+                 id="schoolMenu">
+
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Home"
+                           asp-action="Home">
+                            خانه
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Home"
+                           asp-action="Home"
+                           asp-fragment="about-school">
+                            درباره ما
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Home"
+                           asp-action="Home"
+                           asp-fragment="news">
+                            اخبار
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Home"
+                           asp-action="Home"
+                           asp-fragment="gallery">
+                            گالری
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link"
+                           asp-controller="Home"
+                           asp-action="Home"
+                           asp-fragment="registration-cta">
+                            ثبت نام
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- Left Actions -->
+                <div class="header-actions">
+
+                    <a class="btn school-nimkat-btn"
+                       href="https://nimkatsoft.ir/auth/login">
+
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        ورود دانش‌آموزان به سامانه نیمکت
+
+                    </a>
+
+                    <a class="btn school-login-btn"
+                       asp-controller="Account"
+                       asp-action="Login">
+
+                        <i class="fa-solid fa-user"></i>
+                        ورود ادمین
+
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</header>

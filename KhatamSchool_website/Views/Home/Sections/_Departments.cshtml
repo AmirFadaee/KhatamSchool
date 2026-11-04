@@ -1,0 +1,80 @@
+﻿<section class="departments-section">
+    <div class="blob departments-blob"></div>
+    <div class="container position-relative">
+        <div class="section-header text-center">
+            <span class="section-badge">
+                <i class="fa-solid fa-users"></i>
+                تیم مدرسه خاتم
+            </span>
+            <h2 class="section-title">
+                آشنایی با <span class="highlight">دپارتمان‌های تخصصی</span> مدرسه
+            </h2>
+            <p class="section-description">
+                آشنایی با متخصصان، معلمان و مدیرانی که آینده دانش‌آموزان را می‌سازند
+            </p>
+        </div>
+
+        <div class="swiper departmentsSwiper">
+            <div class="swiper-wrapper">
+                <!-- Teachers -->
+                <div class="swiper-slide">
+                    <div class="department-card">
+                        <div class="department-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>کادر آموزشی</h3>
+                        <p>معرفی معلمان، مربیان و تیم آموزشی مدرسه</p>
+                        <a asp-controller="Departments" asp-action="Teachers" class="department-btn">
+                            آشنایی بیشتر
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Management -->
+                <div class="swiper-slide">
+                    <div class="department-card">
+                        <div class="department-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>کادر اجرایی</h3>
+                        <p>مدیران و تیم اجرایی مدرسه خاتم</p>
+                        <a asp-controller="Departments" asp-action="Management" class="department-btn">
+                            آشنایی بیشتر
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Language -->
+                <div class="swiper-slide">
+                    <div class="department-card">
+                        <div class="department-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <h3>دپارتمان زبان</h3>
+                        <p>آموزش زبان‌های خارجی با استانداردهای روز دنیا</p>
+                        <a asp-controller="Departments" asp-action="Language" class="department-btn">
+                            آشنایی بیشتر
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Counseling -->
+                <div class="swiper-slide">
+                    <div class="department-card">
+                        <div class="department-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>مشاوره و روانشناسی</h3>
+                        <p>همراهی تخصصی دانش‌آموزان و خانواده‌ها</p>
+                        <a asp-controller="Departments" asp-action="Counseling" class="department-btn">
+                            آشنایی بیشتر
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next dept-next"></div>
+            <div class="swiper-button-prev dept-prev"></div>
+        </div>
+    </div>
+</section>

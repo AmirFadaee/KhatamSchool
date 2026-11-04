@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhatamSchool_website", "KhatamSchool_website.csproj", "{6A19CF49-823C-4D74-BBA3-068FB343178F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{703E6A0D-5502-4189-BF96-F0693322880B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0EA17006-9CE4-48D4-B0FE-703879A581E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{50C4B476-305F-4F10-9298-58BABC596273}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{68FAC3F7-5CDC-455C-BA4C-BB6BAF7C670F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhatamSchool_Application", "..\KhatamSchool_Application\KhatamSchool_Application.csproj", "{C9479EE3-6BED-40E2-9335-E64DFAFB6B24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhatamSchool_Data", "..\KhatamSchool_Data\KhatamSchool_Data.csproj", "{2C6091A3-755F-4B93-97B4-AFE05BCC832F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KhatamSchool_Domain", "..\KhatamSchool_Domain\KhatamSchool_Domain.csproj", "{349AA5EE-EF40-46D7-A270-2D812CEEEB1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A19CF49-823C-4D74-BBA3-068FB343178F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A19CF49-823C-4D74-BBA3-068FB343178F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A19CF49-823C-4D74-BBA3-068FB343178F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A19CF49-823C-4D74-BBA3-068FB343178F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9479EE3-6BED-40E2-9335-E64DFAFB6B24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9479EE3-6BED-40E2-9335-E64DFAFB6B24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9479EE3-6BED-40E2-9335-E64DFAFB6B24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9479EE3-6BED-40E2-9335-E64DFAFB6B24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C6091A3-755F-4B93-97B4-AFE05BCC832F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6091A3-755F-4B93-97B4-AFE05BCC832F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6091A3-755F-4B93-97B4-AFE05BCC832F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6091A3-755F-4B93-97B4-AFE05BCC832F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{349AA5EE-EF40-46D7-A270-2D812CEEEB1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{349AA5EE-EF40-46D7-A270-2D812CEEEB1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{349AA5EE-EF40-46D7-A270-2D812CEEEB1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{349AA5EE-EF40-46D7-A270-2D812CEEEB1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6A19CF49-823C-4D74-BBA3-068FB343178F} = {68FAC3F7-5CDC-455C-BA4C-BB6BAF7C670F}
+		{C9479EE3-6BED-40E2-9335-E64DFAFB6B24} = {703E6A0D-5502-4189-BF96-F0693322880B}
+		{2C6091A3-755F-4B93-97B4-AFE05BCC832F} = {0EA17006-9CE4-48D4-B0FE-703879A581E1}
+		{349AA5EE-EF40-46D7-A270-2D812CEEEB1C} = {50C4B476-305F-4F10-9298-58BABC596273}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {545C4DC3-E2EA-4E90-BA76-2ECC316B1361}
+	EndGlobalSection
+EndGlobal

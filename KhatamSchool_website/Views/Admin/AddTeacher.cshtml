@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "افزودن معلم";
+}
+
+<section class="admin-form-page">
+    <div class="admin-form-bg"></div>
+    <div class="container">
+        <div class="admin-form-header" data-aos="fade-down">
+            <a href="/Admin/Dashboard" class="admin-back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                بازگشت
+            </a>
+            <div>
+                <span class="admin-badge">کادر آموزشی</span>
+                <h1>افزودن معلم جدید</h1>
+            </div>
+        </div>
+
+        <div class="admin-form-wrapper" data-aos="fade-up">
+            <div class="admin-form-card">
+                <div class="afc-header">
+                    <div class="afc-icon">👨‍🏫</div>
+                    <div>
+                        <h3>اطلاعات معلم</h3>
+                        <span>تمام فیلدهای ستاره‌دار الزامی هستند</span>
+                    </div>
+                </div>
+
+                <div class="admin-form" id="teacherForm">
+
+                    <div class="admin-upload-area" id="teacherUploadArea">
+                        <input type="file" id="teacherImage" accept="image/*" style="display:none" />
+                        <div class="upload-preview" id="teacherPreview">
+                            <div class="upload-placeholder">
+                                <span class="upload-icon">📷</span>
+                                <p>کلیک کنید یا عکس را اینجا بکشید</p>
+                                <span>PNG، JPG تا ۵ مگابایت</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="af-row">
+                        <div class="af-group">
+                            <label>نام <span class="required">*</span></label>
+                            <input type="text" id="tFirstName" placeholder="نام معلم" />
+                        </div>
+                        <div class="af-group">
+                            <label>نام خانوادگی <span class="required">*</span></label>
+                            <input type="text" id="tLastName" placeholder="نام خانوادگی معلم" />
+                        </div>
+                    </div>
+
+                    <div class="af-row">
+                        <div class="af-group af-full">
+                            <label>کد پرسنلی <span class="required">*</span></label>
+                            <input type="text" id="tPersonnelCode" placeholder="مثلاً T-1001" />
+                        </div>
+                    </div>
+
+                    <div class="af-row">
+                        <div class="af-group">
+                            <label>تخصص</label>
+                            <input type="text" id="tSpecialty" placeholder="مثلاً ریاضی پایه ششم" />
+                        </div>
+                        <div class="af-group">
+                            <label>سال‌های تجربه</label>
+                            <input type="number" id="tExperience" placeholder="مثلاً ۸" min="0" max="50" />
+                        </div>
+                    </div>
+
+                    <div class="af-row">
+                        <div class="af-group">
+                            <label>تاریخ استخدام <span class="required">*</span></label>
+                            <input type="date" id="tHireDate" />
+                        </div>
+                        <div class="af-group">
+                            <label>ترتیب نمایش</label>
+                            <input type="number" id="tDisplayOrder" placeholder="۰" min="0" />
+                        </div>
+                    </div>
+
+                    <div class="af-row">
+                        <div class="af-group af-full">
+                            <label>بیوگرافی</label>
+                            <textarea id="tBio" rows="4" placeholder="توضیحات کوتاه درباره معلم..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="af-row">
+                        <div class="af-group">
+                            <label>وضعیت</label>
+                            <div class="af-toggle">
+                                <input type="checkbox" id="tIsActive" checked />
+                                <label for="tIsActive" class="toggle-label">فعال</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="af-actions">
+                        <button class="af-submit-btn" id="teacherSubmit">
+                            <span>ذخیره معلم</span>
+                        </button>
+                        <a href="/Admin/Dashboard" class="af-cancel-btn">انصراف</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/Admin/addTeacher.js"></script>
+}

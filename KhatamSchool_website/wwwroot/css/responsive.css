@@ -1,0 +1,115 @@
+﻿/* ================= HERO ================= */
+@media (max-width: 991px) {
+    .hero-section {
+        padding-top: 40px;
+        padding-bottom: 60px;
+        min-height: auto;
+    }
+}
+
+/* ================= STATISTICS ================= */
+@media (max-width: 576px) {
+    .stats-panel {
+        padding: 40px 20px;
+        border-radius: var(--radius);
+    }
+}
+
+/* ================= WHY SECTION ================= */
+@media (max-width: 576px) {
+    .why-section {
+        padding: 80px 0;
+    }
+}
+
+/* ================= DEPARTMENTS ================= */
+@media (max-width: 576px) {
+    .department-card {
+        padding: 40px 25px;
+        min-height: auto;
+    }
+}
+
+/* ================= ABOUT ================= */
+@media (max-width: 991px) {
+    .about-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .about-features {
+        justify-items: center;
+    }
+
+    .about-feature {
+        justify-content: center;
+    }
+}
+
+/* ================= REGISTRATION CTA ================= */
+@media(max-width:992px) {
+    .registration-box {
+        padding: 50px 35px;
+        text-align: center;
+    }
+
+    .registration-title {
+        font-size: 40px;
+    }
+
+    .registration-description {
+        margin-inline: auto;
+    }
+}
+
+@media(max-width:576px) {
+    .registration-box {
+        padding: 40px 24px;
+    }
+
+    .registration-title {
+        font-size: 30px;
+    }
+
+    .registration-description {
+        font-size: 15px;
+    }
+
+    .registration-btn {
+        width: 100%;
+        margin-top: 25px;
+    }
+}
+
+/* ================= ACHIEVEMENTS ================= */
+@media (max-width: 576px) {
+    .achievements-section {
+        padding: 80px 0;
+    }
+
+    .achievement-card {
+        padding: 35px 22px;
+    }
+}
+
+/* ================= NEWS ================= */
+@media (max-width: 576px) {
+    .news-section {
+        padding: 80px 0;
+    }
+
+    .news-title {
+        min-height: auto;
+    }
+}
+
+/* ================= GENERAL SECTION SPACING ================= */
+@media (max-width: 768px) {
+    .section-title {
+        letter-spacing: -0.5px;
+    }
+
+    .section-header {
+        padding: 0 10px;
+    }
+}

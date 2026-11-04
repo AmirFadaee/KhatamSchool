@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - مدرسه خاتم</title>
+
+    <link rel="icon"
+          type="image/png"
+          href="~/Images/Logo/ChatGPT Image ۲۷ تیر ۱۴۰۵، ۰۱_۱۲_۰۷.webp"
+          asp-append-version="true">
+
+    <link rel="preload"
+          as="image"
+          href="/Images/Hero/۲۰۲۶۰۶۳۰_۰۹۱۲۴۶.webp">
+
+    <link rel="preload"
+          href="/fonts/vazirmatn/webfonts/Vazirmatn-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin>
+
+    <link rel="preload"
+          href="/fonts/vazirmatn/webfonts/Vazirmatn-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin>
+
+    <!-- SEO -->
+    <meta name="description" content="مدرسه خاتم زعفرانیه - آموزش نوین و آینده محور">
+    <meta name="keywords" content="مدرسه خاتم، دبستان خاتم، آموزش">
+    <link rel="canonical" href="@($"{Context.Request.Scheme}://{Context.Request.Host}{Context.Request.Path}")" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="@ViewData["Title"] - مدرسه خاتم" />
+    <meta property="og:description" content="مدرسه خاتم زعفرانیه - آموزش نوین و آینده محور" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fa_IR" />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#2547f4" />
+    @*     <link rel="icon" type="image/png" href="~/Images/favicon.png" /> *@
+
+    <!-- Preconnect / Performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Styles -->
+    <partial name="_Styles" />
+    @RenderSection("Styles", required: false)
+
+
+
+</head>
+<body>
+    <!-- Header -->
+    <partial name="_Header" />
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <!-- Footer -->
+    <partial name="_Footer" />
+
+    <!-- Scripts -->
+    <partial name="_Scripts" />
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

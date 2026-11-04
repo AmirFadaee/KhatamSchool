@@ -1,0 +1,232 @@
+﻿@{
+    ViewData["Title"] = "افزودن دسته‌بندی دستاورد";
+}
+
+<section class="admin-form-page">
+    <div class="admin-form-bg"></div>
+    <div class="container">
+        <div class="admin-form-header" data-aos="fade-down">
+            <a href="/Admin/Dashboard" class="admin-back-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                بازگشت
+            </a>
+            <div>
+                <span class="admin-badge">افتخارات و دستاورد ها</span>
+                <h1>افزودن دسته بندی افتخارات</h1>
+            </div>
+        </div>
+
+        <div class="admin-form-wrapper" data-aos="fade-up">
+
+            <div class="admin-form-card">
+
+                <div class="afc-header">
+                    <div class="afc-icon">
+                        🏆
+                    </div>
+
+                    <div>
+                        <h3>اطلاعات دسته‌بندی</h3>
+                        <span>تمام فیلدهای ستاره‌دار الزامی هستند</span>
+                    </div>
+                </div>
+
+                <div class="admin-form" id="achievementCategoryForm">
+
+                    <div class="af-row">
+
+                        <div class="af-group af-full">
+                            <label>
+                                عنوان دسته‌بندی
+                                <span class="required">*</span>
+                            </label>
+
+                            <input type="text"
+                                   id="cTitle"
+                                   placeholder="مثلاً افتخارات علمی" />
+                        </div>
+
+                    </div>
+
+                    <div class="af-row">
+
+                        <div class="af-group af-full">
+
+                            <label>
+                                توضیحات
+                            </label>
+
+                            <textarea id="cDescription"
+                                      rows="4"
+                                      placeholder="توضیح کوتاهی درباره این دسته..."></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="af-row">
+
+                        <div class="af-group">
+
+                            <label>
+                                آیکون
+                                <span class="required">*</span>
+                            </label>
+
+                            <select id="cIcon">
+
+                                <option value="">انتخاب کنید</option>
+
+                                <option value="fa-trophy">🏆 جام</option>
+
+                                <option value="fa-medal">🥇 مدال</option>
+
+                                <option value="fa-star">⭐ ستاره</option>
+
+                                <option value="fa-graduation-cap">🎓 فارغ التحصیل</option>
+
+                                <option value="fa-book">📚 کتاب</option>
+
+                                <option value="fa-earth-americas">🌍 کره زمین</option>
+
+                                <option value="fa-lightbulb">💡 لامپ</option>
+
+                                <option value="fa-fire">🔥 شعله</option>
+
+                                <option value="fa-rocket">🚀 موشک</option>
+
+                                <option value="fa-heart">❤️ قلب</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="af-group">
+
+                            <label>
+
+                                پیش نمایش آیکون
+
+                            </label>
+
+                            <div class="upload-preview"
+                                 id="iconPreview"
+                                 style="height:110px">
+
+                                <div class="upload-placeholder">
+
+                                    <span class="upload-icon">
+
+                                        <i class="fa-solid fa-trophy"></i>
+
+                                    </span>
+
+                                    <p id="iconName">
+
+                                        fa-trophy
+
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="af-row">
+
+                        <div class="af-group">
+
+                            <label>
+
+                                ترتیب نمایش
+
+                            </label>
+
+                            <input id="cDisplayOrder"
+                                   type="number"
+                                   min="0"
+                                   value="0" />
+
+                        </div>
+
+                        <div class="af-group">
+
+                            <label>
+
+                                وضعیت
+
+                            </label>
+
+                            <div class="af-toggle">
+
+                                <input type="checkbox"
+                                       checked
+                                       id="cIsActive" />
+
+                                <label class="toggle-label"
+                                       for="cIsActive">
+
+                                    فعال
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="af-actions">
+
+                        <button class="af-submit-btn"
+                                id="categorySubmit">
+
+                            <span>
+
+                                ذخیره دسته‌بندی
+
+                            </span>
+
+                            <svg width="18"
+                                 height="18"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2">
+
+                                <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
+
+                                <path d="M17 21v-8H7v8M7 3v5h8" />
+
+                            </svg>
+
+                        </button>
+
+                        <a href="/Admin/Dashboard"
+                           class="af-cancel-btn">
+
+                            انصراف
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+
+    <script src="~/js/Admin/addAchievementCategory.js"></script>
+
+}

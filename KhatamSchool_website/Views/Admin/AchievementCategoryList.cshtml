@@ -1,0 +1,273 @@
+﻿@using KhatamSchool_Application.ViewModels
+@model IEnumerable<AchievementCategoryListViewModel>
+
+@{
+    ViewData["Title"] = "لیست دسته‌بندی دستاوردها";
+}
+
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/Admin/List.css" />
+}
+<section class="admin-list-page">
+    <div class="admin-list-bg"></div>
+    <div class="container">
+        <div class="admin-list-header" data-aos="fade-down">
+
+            <div class="alh-right">
+
+                <a href="/Admin/Dashboard" class="admin-back-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+                    بازگشت
+                </a>
+
+                <div>
+
+                    <span class="admin-badge">
+                        دستاوردها
+                    </span>
+
+                    <h1>
+                        لیست دسته‌بندی‌ها
+                    </h1>
+
+                    <p>
+                        @Model.Count() دسته ثبت شده
+                    </p>
+
+                </div>
+
+            </div>
+
+            <a href="/Admin/AddAchievementCategory" class="al-add-btn">
+
+                <svg width="18" height="18"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2">
+
+                    <path d="M12 5v14M5 12h14" />
+
+                </svg>
+
+                افزودن دسته
+
+            </a>
+
+        </div>
+
+
+        <div class="al-filters" data-aos="fade-up">
+
+            <div class="al-search">
+
+                <svg width="16"
+                     height="16"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2">
+
+                    <circle cx="11" cy="11" r="8" />
+
+                    <path d="m21 21-4.35-4.35" />
+
+                </svg>
+
+                <input id="searchInput"
+                       type="text"
+                       placeholder="جستجو بر اساس عنوان دسته..." />
+
+            </div>
+
+        </div>
+
+
+        <div class="al-table-wrapper"
+             data-aos="fade-up"
+             data-aos-delay="100">
+
+            <table class="al-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>دسته‌بندی</th>
+
+                        <th>توضیحات</th>
+
+                        <th>تعداد دستاورد</th>
+
+                        <th>ترتیب</th>
+
+                        <th>وضعیت</th>
+
+                        <th>عملیات</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr class="al-row"
+                            data-name="@item.Title">
+
+                            <td>
+
+                                <div class="al-person">
+
+                                    <div class="al-avatar">
+
+                                        <i class="fa-solid @(item.IconClass ?? "fa-star")"></i>
+
+                                    </div>
+
+                                    <div class="al-person-info">
+
+                                        <strong>
+
+                                            @item.Title
+
+                                        </strong>
+
+                                        <span>
+
+                                            آیکون : @(item.IconClass ?? "fa-star")
+
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td class="al-muted">
+
+                                @(string.IsNullOrWhiteSpace(item.Description)
+                                    ? "—"
+                                    : item.Description)
+
+                            </td>
+
+                            <td>
+
+                                <span class="al-code">
+
+                                    @item.ItemsCount
+
+                                </span>
+
+                            </td>
+
+                            <td class="al-muted">
+
+                                @item.DisplayOrder
+
+                            </td>
+
+                            <td>
+
+                                <span class="al-status @(item.IsActive ? "active" : "inactive")">
+
+                                    @(item.IsActive ? "فعال" : "غیرفعال")
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <div class="al-actions">
+
+                                    <a href="/Admin/EditAchievementCategory/@item.Id"
+                                       class="al-action-btn edit"
+                                       title="ویرایش">
+
+                                        <svg width="15"
+                                             height="15"
+                                             viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="2">
+
+                                            <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+
+                                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+
+                                        </svg>
+
+                                    </a>
+
+                                    <button class="al-action-btn delete"
+                                            data-id="@item.Id"
+                                            data-name="@item.Title">
+
+                                        <svg width="15"
+                                             height="15"
+                                             viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="2">
+
+                                            <polyline points="3 6 5 6 21 6" />
+
+                                            <path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6" />
+
+                                            <path d="M10 11v6M14 11v6" />
+
+                                            <path d="M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" />
+
+                                        </svg>
+
+                                    </button>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+
+            @if (!Model.Any())
+            {
+                <div class="al-empty">
+
+                    <span>🏆</span>
+
+                    <p>
+
+                        هیچ دسته‌بندی ثبت نشده است.
+
+                    </p>
+
+                    <a href="/Admin/AddAchievementCategory"
+                       class="al-add-btn">
+
+                        افزودن اولین دسته
+
+                    </a>
+
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+
+    <script src="~/js/Admin/achievementCategoryList.js"></script>
+
+}

@@ -1,0 +1,93 @@
+﻿@font-face {
+    font-family: 'Vazirmatn';
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('/fonts/vazirmatn/webfonts/Vazirmatn-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Vazirmatn', Tahoma, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.7;
+}
+
+/* تایپوگرافی فلوئید - با تغییر سایز صفحه به‌صورت نرم اسکیل می‌شه */
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 20px;
+    border-radius: 50px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 22px;
+    box-shadow: var(--shadow-sm);
+}
+
+    .section-badge::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gradient-warm);
+    }
+
+.section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: var(--dark);
+}
+
+    .section-title .highlight {
+        background: var(--gradient-main);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+.section-description {
+    margin-top: 18px;
+    color: var(--gray);
+    font-size: clamp(15px, 1.4vw, 18px);
+    line-height: 2;
+}
+
+.section-header {
+    max-width: 750px;
+    margin: 0 auto;
+}

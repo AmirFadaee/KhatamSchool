@@ -1,0 +1,157 @@
+﻿/* ================= ABOUT SCHOOL ================= */
+.about-school-section {
+    padding: 130px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-blob {
+    width: 500px;
+    height: 500px;
+    background: rgba(124,58,237,.10);
+    top: 10%;
+    right: -180px;
+}
+
+.about-image-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.about-school-image {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 6px solid white;
+}
+
+.about-image-glow {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    right: 5%;
+    background: var(--gradient-main);
+    border-radius: var(--radius-lg);
+    opacity: .15;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.about-badge-float {
+    position: absolute;
+    bottom: -25px;
+    left: -25px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: white;
+    padding: 18px 24px;
+    border-radius: 22px;
+    box-shadow: var(--shadow-lg);
+    z-index: 2;
+}
+
+    .about-badge-float i {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        background: var(--gradient-warm);
+        color: white;
+        font-size: 20px;
+    }
+
+    .about-badge-float strong {
+        display: block;
+        font-size: 20px;
+        font-weight: 900;
+        color: var(--dark);
+    }
+
+    .about-badge-float span {
+        font-size: 12px;
+        color: var(--gray);
+    }
+
+.about-content {
+    padding-right: 20px;
+}
+
+.section-title .highlight {
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-description {
+    margin-top: 25px;
+    color: var(--gray);
+    line-height: 2.1;
+    font-size: 17px;
+}
+
+.about-features {
+    margin-top: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+}
+
+.about-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    font-size: 15.5px;
+    font-weight: 600;
+}
+
+    .about-feature i {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        background: rgba(34,197,94,.12);
+        color: #22c55e;
+        font-size: 15px;
+    }
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    background: var(--gradient-main);
+    color: white;
+    border-radius: 60px;
+    padding: 16px 36px;
+    font-weight: 800;
+    border: none;
+    box-shadow: 0 15px 35px rgba(37,71,244,.3);
+    transition: .35s var(--ease);
+}
+
+    .about-btn:hover {
+        color: white;
+        transform: translateY(-4px);
+        box-shadow: 0 20px 45px rgba(37,71,244,.4);
+    }
+
+@media (max-width: 576px) {
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-badge-float {
+        left: 10px;
+        bottom: -20px;
+        padding: 14px 18px;
+    }
+}

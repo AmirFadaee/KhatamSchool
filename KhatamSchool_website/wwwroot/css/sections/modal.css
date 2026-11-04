@@ -1,0 +1,165 @@
+﻿/* ===================================
+   First Grade Registration Modal
+   Premium Modern 2026
+=================================== */
+
+
+/* Modal Size */
+
+.registration-modal .modal-dialog {
+    width: min(94vw, 1150px);
+    max-width: 1150px;
+}
+
+
+/* Modal Content */
+
+.registration-modal .modal-content {
+    position: relative;
+    background: transparent;
+    border: none;
+    overflow: visible;
+}
+
+
+/* Opening Animation */
+
+.registration-modal .modal-dialog {
+    transform: translateY(40px) scale(.92);
+    transition: transform .45s cubic-bezier(.34,1.56,.64,1);
+}
+
+
+
+.registration-modal.show .modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+
+
+
+
+/* Banner */
+
+.registration-banner {
+    position: relative;
+    overflow: hidden;
+    border-radius: 34px;
+    background: white;
+    box-shadow: 0 40px 100px rgba(0,0,0,.45), 0 10px 30px rgba(0,0,0,.25);
+}
+
+
+
+    /* Image */
+
+
+    .registration-banner img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 88vh;
+        object-fit: contain;
+        user-select: none;
+    }
+
+
+
+
+
+/* Close Button */
+
+
+.registration-close {
+    position: absolute;
+    top: -25px;
+    right: -25px;
+    z-index: 50;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 15px 40px rgba(0,0,0,.35);
+    transition: .35s ease;
+}
+
+
+
+    .registration-close span {
+        font-size: 38px;
+        font-weight: 300;
+        line-height: 1;
+        color: #333;
+    }
+
+
+
+
+    .registration-close:hover {
+        transform: rotate(90deg) scale(1.12);
+        background: white;
+    }
+
+
+
+
+/* ===================================
+   Premium Backdrop Blur
+=================================== */
+
+
+.modal-backdrop.show {
+    opacity: .72;
+    background-color: #050505;
+}
+
+
+
+.modal-backdrop {
+    backdrop-filter: blur(14px);
+}
+
+
+
+
+
+/* ===================================
+   Mobile
+=================================== */
+
+
+@media(max-width:768px) {
+
+
+    .registration-modal .modal-dialog {
+        width: 94vw;
+    }
+
+
+
+    .registration-banner {
+        border-radius: 22px;
+    }
+
+
+
+
+    .registration-close {
+        width: 44px;
+        height: 44px;
+        top: -18px;
+        right: -12px;
+    }
+
+
+
+
+        .registration-close span {
+            font-size: 30px;
+        }
+}

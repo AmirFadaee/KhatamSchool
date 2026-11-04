@@ -1,0 +1,17 @@
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\bin\Debug\net8.0\KhatamSchool_Application.deps.json
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\bin\Debug\net8.0\KhatamSchool_Application.runtimeconfig.json
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\bin\Debug\net8.0\KhatamSchool_Application.dll
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\bin\Debug\net8.0\KhatamSchool_Application.pdb
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\bin\Debug\net8.0\KhatamSchool_Domain.dll
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\bin\Debug\net8.0\KhatamSchool_Domain.pdb
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.csproj.AssemblyReference.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.AssemblyInfoInputs.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.AssemblyInfo.cs
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.csproj.CoreCompileInputs.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSc.9E3142DC.Up2Date
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.dll
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\refint\KhatamSchool_Application.dll
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.pdb
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\KhatamSchool_Application.genruntimeconfig.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Application\obj\Debug\net8.0\ref\KhatamSchool_Application.dll

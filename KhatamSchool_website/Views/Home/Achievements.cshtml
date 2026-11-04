@@ -1,0 +1,135 @@
+﻿@using KhatamSchool_Application.ViewModels
+@model AchievementViewModel
+@{
+    ViewData["Title"] = Model.CategoryTitle;
+
+    string colorKey = "blue";
+    if (!string.IsNullOrEmpty(Model.IconClass))
+    {
+        if (Model.IconClass.Contains("trophy")) colorKey = "gold";
+        else if (Model.IconClass.Contains("medal")) colorKey = "purple";
+        else if (Model.IconClass.Contains("star")) colorKey = "blue";
+    }
+}
+
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/Home/achievements.css">
+}
+
+<section class="ach-hero ach-@colorKey">
+    <div class="ach-hero-bg"></div>
+    <div class="ach-orb ach-orb-1"></div>
+    <div class="ach-orb ach-orb-2"></div>
+    <div class="container text-center">
+        <div class="ach-hero-content">
+            <span class="ach-badge" data-aos="fade-down">
+                <i class="fa-solid @(Model.IconClass ?? "fa-star")"></i>
+                افتخارات مدرسه خاتم
+            </span>
+            <h1 data-aos="fade-up" data-aos-delay="100">@Model.CategoryTitle</h1>
+            @if (!string.IsNullOrEmpty(Model.CategoryDescription))
+            {
+                <p data-aos="fade-up" data-aos-delay="200">@Model.CategoryDescription</p>
+            }
+            <div class="ach-count-badge" data-aos="fade-up" data-aos-delay="300">
+                <strong>@Model.Items.Count()</strong>
+                <span>دستاورد ثبت شده</span>
+            </div>
+        </div>
+    </div>
+    <a href="javascript:history.back()" class="ach-back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        بازگشت
+    </a>
+</section>
+
+<section class="ach-slider-section ach-@colorKey">
+    <div class="container">
+
+        @if (Model.Items.Any())
+        {
+            <div class="ach-swiper-wrapper" data-aos="fade-up">
+                <div class="swiper achSwiper">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.Items)
+                        {
+                            <div class="swiper-slide">
+                                <div class="ach-card">
+                                    <div class="ach-card-img">
+
+                                        @if (!string.IsNullOrEmpty(item.ImagePath))
+                                        {
+                                            <a href="@item.ImagePath"
+                                               data-fancybox="achievement-gallery"
+                                               data-caption="@item.Title"
+                                               class="ach-card-image-link">
+
+                                                <img src="@item.ImagePath"
+                                                     alt="@item.Title"
+                                                     loading="lazy"
+                                                     decoding="async" />
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <div class="ach-card-no-img">
+                                                <i class="fa-solid @(Model.IconClass ?? "fa-star")"></i>
+                                            </div>
+                                        }
+
+                                        <div class="ach-card-img-overlay"></div>
+
+                                        <div class="ach-card-number">
+                                            @(Model.Items.ToList().IndexOf(item) + 1)
+                                        </div>
+
+                                    </div>
+                                    <div class="ach-card-body">
+                                        <h3>@item.Title</h3>
+                                        @if (!string.IsNullOrEmpty(item.Description))
+                                        {
+                                            <p>@item.Description</p>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="ach-nav">
+                    <button class="ach-prev">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6" />
+                        </svg>
+                    </button>
+                    <div class="ach-pagination"></div>
+                    <button class="ach-next">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="ach-progress-wrapper">
+                    <div class="ach-progress-bar" id="achProgress"></div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="ach-empty">
+                <i class="fa-solid @(Model.IconClass ?? "fa-star")"></i>
+                <p>هنوز دستاوردی ثبت نشده</p>
+            </div>
+        }
+
+    </div>
+</section>
+
+@section Scripts {
+    <script src="~/js/Home/achievements.js"></script>
+}

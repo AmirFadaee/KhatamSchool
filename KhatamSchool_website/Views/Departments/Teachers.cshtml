@@ -1,0 +1,93 @@
+﻿@using KhatamSchool_Application.ViewModels
+@model List<TeacherListItemViewModel>
+@{
+    ViewData["Title"] = "کادر آموزشی";
+}
+@section Styles {
+    <link rel="stylesheet" href="~/css/Departments/teachers.css" />
+}
+
+<section class="teachers-hero">
+    <div class="aurora-layer">
+        <div class="aurora-blob aurora-1"></div>
+        <div class="aurora-blob aurora-2"></div>
+        <div class="aurora-blob aurora-3"></div>
+    </div>
+    <div class="teachers-grid-pattern"></div>
+    <div class="noise-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-badge reveal-item">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                پیش دبستان و دبستان غیر دولتی خاتم
+            </span>
+            <h1 class="reveal-title">معلمان و مربیان <span class="highlight">آینده‌ساز</span></h1>
+            <p class="reveal-item">تیمی از بهترین متخصصان آموزشی که آینده دانش‌آموزان را می‌سازند</p>
+        </div>
+    </div>
+</section>
+
+<section class="teachers-showcase">
+    <div class="aurora-layer">
+        <div class="aurora-blob aurora-4"></div>
+        <div class="aurora-blob aurora-5"></div>
+    </div>
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="container-fluid">
+            <div class="teacher-track" id="teacherTrack">
+                @foreach (var teacher in Model)
+                {
+                    <div class="teacher-card"
+                         data-name="@teacher.FullName"
+                         data-specialty="@teacher.Specialty"
+                         data-bio="@teacher.Bio"
+                         data-experience="@(teacher.YearsOfExperience.HasValue ? teacher.YearsOfExperience.ToString() : "")"
+                         data-img="@(!string.IsNullOrEmpty(teacher.ProfileImagePath) ? teacher.ProfileImagePath : "/images/Logo/ChatGPT Image ۲۷ تیر ۱۴۰۵، ۰۱_۱۲_۰۷.png")">
+                        <div class="card-spotlight"></div>
+                        <img src="@(!string.IsNullOrEmpty(teacher.ProfileImagePath) ? teacher.ProfileImagePath : "/images/Logo/ChatGPT Image ۲۷ تیر ۱۴۰۵، ۰۱_۱۲_۰۷.png")"
+                             alt="@teacher.FullName" />
+                        <div class="teacher-card-glow"></div>
+                        <div class="teacher-info">
+                            <h3>@teacher.FullName</h3>
+                            <span>@teacher.Specialty</span>
+                            <button class="profile-btn">
+                                مشاهده پروفایل
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="teachers-empty">
+            <i class="fa-solid fa-user-graduate"></i>
+            <p>هنوز معلمی ثبت نشده است.</p>
+        </div>
+    }
+</section>
+
+<div class="teacher-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content-custom">
+        <button class="close-modal">×</button>
+        <div class="modal-img-wrapper">
+            <img id="modalTeacherImg" src="/images/Logo/ChatGPT Image ۲۷ تیر ۱۴۰۵، ۰۱_۱۲_۰۷.png" alt="Teacher" />
+        </div>
+        <h2 id="modalTeacherName"></h2>
+        <h5 id="modalTeacherSpecialty"></h5>
+        <div class="modal-experience-badge" id="modalExperienceWrapper">
+            <i class="fa-solid fa-award"></i>
+            <span id="modalTeacherExperience"></span>
+        </div>
+        <p id="modalTeacherBio"></p>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/Departments/teachers.js"></script>
+}

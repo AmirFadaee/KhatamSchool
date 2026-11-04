@@ -1,0 +1,84 @@
+﻿@using KhatamSchool_Application.ViewModels
+@model HomeViewModel
+<section class="news-section">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <span class="section-badge">
+                <i class="fa-solid fa-newspaper"></i>
+                اخبار و رویدادها
+            </span>
+            <h2 class="section-title mt-3">
+                آخرین اخبار مدرسه <span class="highlight">خاتم</span>
+            </h2>
+            <p class="section-description">
+                جدیدترین اطلاعیه‌ها، جشنواره‌ها و رویدادهای آموزشی
+            </p>
+        </div>
+        <div class="swiper newsSwiper">
+            <div class="swiper-wrapper">
+                @if (Model.News != null && Model.News.Any())
+                {
+                    foreach (var item in Model.News)
+                    {
+                        <div class="swiper-slide">
+                            <div class="news-card">
+                                <div class="news-image">
+
+                                    @if (!string.IsNullOrWhiteSpace(item.CoverImage))
+                                    {
+                                        <a href="@item.CoverImage"
+                                           data-fancybox="news-gallery"
+                                           data-caption="@item.Title"
+                                           class="news-image-link">
+
+                                            <img src="@item.CoverImage"
+                                                 alt="@item.Title"
+                                                 loading="lazy"
+                                                 decoding="async" />
+
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a href="/Images/Logo/ChatGPT Image ۲۷ تیر ۱۴۰۵، ۰۱_۱۲_۰۷.png"
+                                           data-fancybox="news-gallery"
+                                           data-caption="@item.Title"
+                                           class="news-image-link">
+
+                                            <img src="/images/Logo/ChatGPT Image ۲۷ تیر ۱۴۰۵، ۰۱_۱۲_۰۷.png"
+                                                 alt="@item.Title"
+                                                 loading="lazy"
+                                                 decoding="async" />
+
+                                        </a>
+                                    }
+
+                                </div>
+                                <div class="news-body">
+                                    <h4 class="news-title">@item.Title</h4>
+                                    <p class="news-summary">@item.Summary</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="swiper-slide">
+                        <div class="news-card news-empty">
+                            <div class="news-body text-center">
+                                <i class="fa-regular fa-newspaper news-empty-icon"></i>
+                                <h4 class="news-title">هنوز خبری منتشر نشده است.</h4>
+                                <p class="news-summary">
+                                    به زودی جدیدترین اخبار مدرسه در این بخش نمایش داده خواهد شد.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="swiper-button-next news-next"></div>
+            <div class="swiper-button-prev news-prev"></div>
+        </div>
+    </div>
+</section>

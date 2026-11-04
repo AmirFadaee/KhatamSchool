@@ -1,0 +1,361 @@
+﻿@using KhatamSchool_Application.ViewModels
+@model IEnumerable<CounselingTicketListViewModel>
+
+@{
+    ViewData["Title"] = "لیست تیکت های مشاوره";
+}
+
+@section Styles {
+    <link rel="stylesheet"
+          href="~/css/Admin/List.css" />
+}
+
+<section class="admin-list-page">
+    <div class="admin-list-bg"></div>
+    <div class="container">
+        <div class="admin-list-header" data-aos="fade-down">
+
+            <div class="alh-right">
+
+                <a href="/Admin/Dashboard" class="admin-back-btn">
+
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7" />
+                    </svg>
+
+                    بازگشت
+
+                </a>
+
+                <div>
+
+                    <span class="admin-badge">
+
+                        مرکز مشاوره
+
+                    </span>
+
+                    <h1>
+
+                        لیست تیکت ها
+
+                    </h1>
+
+                    <p>
+
+                        @Model.Count() تیکت ثبت شده
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="al-filters" data-aos="fade-up">
+
+            <div class="al-search">
+
+                <svg width="16"
+                     height="16"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="2">
+
+                    <circle cx="11" cy="11" r="8" />
+
+                    <path d="m21 21-4.35-4.35" />
+
+                </svg>
+
+                <input id="searchInput"
+                       type="text"
+                       placeholder="جستجو بر اساس والدین، دانش آموز، موضوع یا کد پیگیری..." />
+
+            </div>
+
+            <div class="al-filter-btns">
+
+                <button class="al-filter-btn active"
+                        data-filter="all">
+
+                    همه
+
+                </button>
+
+                <button class="al-filter-btn"
+                        data-filter="1">
+
+                    جدید
+
+                </button>
+
+                <button class="al-filter-btn"
+                        data-filter="2">
+
+                    درحال بررسی
+
+                </button>
+
+                <button class="al-filter-btn"
+                        data-filter="3">
+
+                    پاسخ داده شده
+
+                </button>
+
+                <button class="al-filter-btn"
+                        data-filter="4">
+
+                    بسته شده
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="al-table-wrapper"
+             data-aos="fade-up"
+             data-aos-delay="100">
+
+            <table class="al-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>والدین</th>
+
+                        <th>دانش آموز</th>
+
+                        <th>کد پیگیری</th>
+
+                        <th>موضوع</th>
+
+                        <th>اولویت</th>
+
+                        <th>وضعیت</th>
+
+                        <th>تاریخ ثبت</th>
+
+                        <th>عملیات</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    @foreach (var item in Model)
+                    {
+
+                        <tr class="al-row"
+                            data-parent="@item.ParentName"
+                            data-student="@item.StudentName"
+                            data-code="@item.TrackingCode"
+                            data-subject="@item.Subject"
+                            data-status="@((int)item.StatusEnum)">
+
+                            <td>
+
+                                <div class="al-person">
+
+                                    <div class="al-avatar">
+
+                                        <span>
+
+                                            @item.ParentName.First()
+
+                                        </span>
+
+                                    </div>
+
+                                    <div class="al-person-info">
+
+                                        <strong>
+
+                                            @item.ParentName
+
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                @item.StudentName
+
+                            </td>
+
+                            <td>
+
+                                <span class="al-code">
+
+                                    @item.TrackingCode
+
+                                </span>
+
+                            </td>
+
+                            <td class="al-muted">
+
+                                @item.Subject
+
+                            </td>
+
+                            <td>
+
+                                <span class="al-priority-badge al-priority-@((int)item.PriorityEnum)">
+
+                                    @item.Priority
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <span class="al-ticket-status al-ticket-status-@((int)item.StatusEnum)">
+
+                                    @item.Status
+
+                                </span>
+
+                            </td>
+
+                            <td class="al-muted">
+
+                                @item.CreatedAt.ToString("yyyy/MM/dd")
+
+                            </td>
+
+                            <td>
+
+                                <div class="al-actions">
+
+                                    <button class="al-action-btn view"
+                                            data-message="@item.Message"
+                                            title="مشاهده متن پیام">
+
+                                        <svg width="15"
+                                             height="15"
+                                             viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="2">
+
+                                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z" />
+
+                                            <circle cx="12"
+                                                    cy="12"
+                                                    r="3" />
+
+                                        </svg>
+
+                                    </button>
+
+                                    <a href="/Admin/ReplyCounselingTicket/@item.Id"
+                                       class="al-action-btn edit"
+                                       title="پاسخ">
+
+                                        <svg width="16"
+                                             height="16"
+                                             viewBox="0 0 24 24"
+                                             fill="none"
+                                             stroke="currentColor"
+                                             stroke-width="2">
+
+                                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+
+                                        </svg>
+
+                                    </a>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    }
+
+                </tbody>
+
+            </table>
+
+            @if (!Model.Any())
+            {
+
+                <div class="al-empty">
+
+                    <span>
+
+                        💬
+
+                    </span>
+
+                    <p>
+
+                        هیچ تیکتی ثبت نشده است.
+
+                    </p>
+
+                </div>
+
+            }
+
+        </div>
+        <div class="modal fade"
+             id="ticketMessageModal"
+             tabindex="-1">
+
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+
+                <div class="modal-content">
+
+                    <div class="modal-header">
+
+                        <h5 class="modal-title">
+
+                            شرح مشکل والدین
+
+                        </h5>
+
+                        <button type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal">
+                        </button>
+
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div id="ticketMessageText"
+                             style="white-space:pre-wrap;line-height:2;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+
+    <script src="~/js/Admin/counselingTicketList.js"></script>
+
+}

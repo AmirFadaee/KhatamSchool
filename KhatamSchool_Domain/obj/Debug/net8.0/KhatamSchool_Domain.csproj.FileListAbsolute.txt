@@ -1,0 +1,14 @@
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\bin\Debug\net8.0\KhatamSchool_Domain.deps.json
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\bin\Debug\net8.0\KhatamSchool_Domain.runtimeconfig.json
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\bin\Debug\net8.0\KhatamSchool_Domain.dll
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\bin\Debug\net8.0\KhatamSchool_Domain.pdb
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.csproj.AssemblyReference.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.AssemblyInfoInputs.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.AssemblyInfo.cs
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.csproj.CoreCompileInputs.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.dll
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\refint\KhatamSchool_Domain.dll
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.pdb
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\KhatamSchool_Domain.genruntimeconfig.cache
+C:\Users\Amir\source\repos\KhatamSchool_GitHub\KhatamSchool_Domain\obj\Debug\net8.0\ref\KhatamSchool_Domain.dll
